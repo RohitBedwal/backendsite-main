@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Our Services - EANIME</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    .navbar {
+      background-color: #1f1f1f !important;
+    }
+
+    .btn-primary {
+      background-color: #0d6efd;
+      border: none;
+    }
+
+    .hero-section {
+      background-color: #1f1f1f;
+      padding: 80px 0;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    .card {
+      background-color: #1f1f1f;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card img {
+      border-radius: 12px 12px 0 0;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-title {
+      color: #ffffff;
+    }
+
+    .card-text {
+      color: #c4c4c4;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/home">EANIME</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/about/">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/services/">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact-crud/">Contact</a>
+        </li>
+      </ul>
+      <a href="{% url 'subscribe' %}" class="btn btn-primary">Subscribe</a>
+        <form action="{% url 'logout' %}" method="post">
+          {% csrf_token %}
+          <button type="submit"
+        style="
+            background-color: #1f4037;
+            color: white;
+            padding: 8px 20px;
+            margin-left:20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        "
+        onmouseover="this.style.backgroundColor='white'; this.style.color='#1f4037';"
+        onmouseout="this.style.backgroundColor='#1f4037'; this.style.color='white';"
+    >
+        Logout
+    </button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!-- Services Hero Section -->
+<div class="hero-section text-center">
+  <h1 class="display-4">Our Services</h1>
+  <p class="lead">We provide a wide range of solutions to elevate your business.</p>
+</div>
+
+<!-- Services Section -->
+<div class="container my-5">
+  <div class="row text-center g-4">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Web Development</h5>
+          <p class="card-text">Custom websites, e-commerce solutions, and robust web apps designed for growth.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Mobile Apps</h5>
+          <p class="card-text">Modern mobile applications tailored for Android and iOS to boost engagement.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Digital Marketing</h5>
+          <p class="card-text">Comprehensive strategies in SEO, content, and social media marketing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
